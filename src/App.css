@@ -1,38 +1,56 @@
-.App {
-  text-align: center;
+.container {
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  background-color: lightblue;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+
+.centerAnimate {
+  animation: MoveUp .5s linear infinite;
+  animation-iteration-count: 1;
+  top: 40%
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+@keyframes MoveUp {
+  from{top:50%}
+  to{top: 40%}
+}
+
+
+
+.FuckBtn{
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding-top: 5%;
 }
 
-.App-link {
-  color: #61dafb;
+
+@keyframes fadeIn {
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.infoStyle{
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  animation: fadeIn ease 2s;
 }
