@@ -1,29 +1,29 @@
 import React,{useState,useEffect} from 'react';
-import logo from './logo.svg';
 import Info from './Info'
 import './App.css';
 import axios from 'axios';
-import useCookie from 'react-use-cookie';
 
 function App() {
   
-  var [centerDivClass,setCenterDivClass] =  useState("center")
-  var [infoSubmitted, setInfoSubmitted] = useState(false)
-  var [firstName, updateFirstName] = useState("")
-  var [lastName, updateLastName] = useState("")
-  var [infoString,setInfoString] = useState("Retrieving How Many People Feel the Same Way")
-  const [userToken, setUserToken] = useCookie('token', '0');
+  const [centerDivClass,setCenterDivClass] =  useState("center")
+  const [infoSubmitted, setInfoSubmitted] = useState(false)
+  const [name, updateName] = useState("")
+  const [infoString,setInfoString] = useState("Retrieving How Many People Feel the Same Way")
 
   let changeClass = function(){
     setCenterDivClass("center centerAnimate")
     setInfoSubmitted(true)
   }
-  
+
   let submitName = async function(){
-    let result = await axios.post('http://localhost:5000/addName',{
-      firstName: firstName,
-      lastName: lastName
-    })
+    let result = await axios.post('/addName',{
+      name: name,
+    }, {
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+      } ,
+      withCredentials: true })
+    console.log(result.headers)
     setInfoString(result.data)
     changeClass()
   }
@@ -36,8 +36,7 @@ function App() {
 
       <div className={centerDivClass}>
         <div> 
-          <input value={firstName} onChange={(e)=>updateFirstName(e.target.value)} type="text" placeholder="First Name"/>
-          <input value={lastName} onChange={(e)=>updateLastName(e.target.value)} type="text" placeholder="Last Name"/>
+          <input value={name} onChange={(e)=>updateName(e.target.value)} type="text" placeholder="Full Name"/>
         </div>
         <div className="FuckBtn">
           <button onClick={()=>submitName()}  >Fuck This Person</button>
