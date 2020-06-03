@@ -2,37 +2,64 @@
   height: 100vh;
   width: 100vw;
   position: relative;
-  background-color: lightblue;
+  background-color: orange;
 }
 
 .center {
   margin: 0;
   position: absolute;
-  top: 50%;
+  top: 60%;
   left: 50%;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
 
+.top5Style{
+  margin: 0;
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.nameField{
+  width: 50vw;
+  height: 5vh;
+  text-align: center;
+  font-weight: bold;
+  font-size: 16px;
+  text-shadow: cornflowerblue;
+}
+
+.btnStyle{
+  height: 10vh;
+  background-color: red;
+}
 
 .centerAnimate {
   animation: MoveUp .5s linear infinite;
   animation-iteration-count: 1;
-  top: 40%
+  top: 50%
 }
 
 @keyframes MoveUp {
-  from{top:50%}
-  to{top: 40%}
+  from{top:60%}
+  to{top: 50%}
 }
 
-
-
-.FuckBtn{
+.btnDiv{
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 5%;
+  margin-top: 2%;
+}
+
+.btnStyle{
+  width: 20vw;
+  height: 20vw;
+  background-color: transparent;
+  position:relative;
 }
 
 
@@ -48,8 +75,8 @@
 .infoStyle{
   margin: 0;
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 80vh;
+  left: 50vw;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   animation: fadeIn ease 2s;
