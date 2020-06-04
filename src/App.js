@@ -51,7 +51,7 @@ function App() {
 
       <div className={centerDivClass}>
         <div> 
-          <input className="nameField" value={name} onChange={(e)=>updateName(e.target.value)} type="text"  placeholder="Name/Things"/>
+          <input className="nameField" value={name} onChange={(e)=>updateName(e.target.value)} type="text"  placeholder="Enter something or someone you want to say fuck you too then click the button below"/>
         </div>
 
         <div className="btnDiv">
