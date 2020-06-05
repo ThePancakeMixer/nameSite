@@ -27,8 +27,8 @@ function App() {
       } ,
       withCredentials: true })
     updateName("")
-    setResults(result.data)
     changeClass()
+    setResults(result.data)
     getTop5()
   }
 
@@ -53,17 +53,14 @@ function App() {
         <div> 
           <input className="nameField" value={name} onChange={(e)=>updateName(e.target.value)} type="text"  placeholder="Enter something or someone you want to say fuck you too then click the button below"/>
         </div>
-
-        <div className="btnDiv">
-          <input className="btnStyle" type="image"  src={middleFlinger}  alt="Submit Form" onClick={()=>submitName()} />
+      </div>
+      <div className="infoStyle">
+          {infoSubmitted && <Info infoString={resultStrings}></Info>}
         </div>
 
-      </div>
-
-      <div className="infoStyle">
-        {infoSubmitted && <Info infoString={resultStrings}></Info>}
-      </div>
-
+      <div className="btnDiv">
+          <input className="btnStyle" type="image"  src={middleFlinger}  alt="Submit Form" onClick={()=>submitName()} />
+        </div>
 
 
     </div>

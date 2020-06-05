@@ -8,7 +8,7 @@
 .center {
   margin: 0;
   position: absolute;
-  top: 60%;
+  top: 45%;
   left: 50%;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
@@ -29,35 +29,29 @@
   text-align: center;
   font-weight: bold;
   font-size: 16px;
-  
   text-shadow: cornflowerblue;
 }
 
-.btnStyle{
-  height: 10vh;
-  background-color: red;
-}
 
 .centerAnimate {
   animation: MoveUp .5s linear infinite;
   animation-iteration-count: 1;
-  top: 50%
+  top: 35%
 }
 
 @keyframes MoveUp {
-  from{top:60%}
-  to{top: 50%}
+  from{top:45%}
+  to{top: 35%}
 }
 
 .btnDiv{
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 2%;
-
 }
 
 .btnStyle{
+  top: 50vh;
   width: 20vw;
   height: 20vw;
   background-color: transparent;
@@ -75,10 +69,9 @@
 }
 
 .infoStyle{
-  margin: 0;
   position: absolute;
-  top: 80vh;
-  left: 50vw;
+  left: 50%;
+  top: 43%;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   animation: fadeIn ease 2s;
