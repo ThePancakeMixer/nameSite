@@ -26,7 +26,7 @@ function App() {
         "Access-Control-Allow-Origin": "*",
       } ,
       withCredentials: true })
-    console.log(result.headers)
+    updateName("")
     setResults(result.data)
     changeClass()
     getTop5()
